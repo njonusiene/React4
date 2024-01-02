@@ -16,13 +16,27 @@ function App() {
 
   //Pridedam eilutę
   const addValue = () => {
+    // Tikrinam validacija
+    if (firstName.trim() === '' || lastName.trim() === '' || age.trim() === '') {
+      alert('Visi laukai turi būti užpildyti! :)')
+      return
+    }
+
+    const ageValue = parseInt(age, 10)
+    if (isNaN(ageValue) || ageValue <= 0) {
+      alert('Neteisingai įvedėte amžių!')
+      return
+    }
+  
     const newData = [...data, { firstName, lastName, age }]
     setData(newData)
-
-    // Išsivalom input
+  
+    // Išvalome input
     setFirstName('')
     setLastName('')
     setAge('')
+
+    alert('Duomenys įvesti sėkmingai!')
   }
 
   //Pirmos eilutės ištrynimas
