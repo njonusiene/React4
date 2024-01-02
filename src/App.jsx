@@ -44,6 +44,7 @@ function App() {
     const newData = [...data]
     newData.shift()
     setData(newData)
+    alert('Pirma eilutė ištrinta sėkmingai!')
   }
 
   //Paskutinės eilutės ištrynimas
@@ -51,6 +52,7 @@ function App() {
     const newData = [...data]
     newData.pop()
     setData(newData)
+    alert('Paskutinė eilutė ištrinta sėkmingai!')
   }
 
   return (
